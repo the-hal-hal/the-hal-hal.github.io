@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js Example</title>
+  <!-- Include Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .wadahel {
+      width: 800px;
+      max-width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Create a canvas element where the chart will be rendered -->
+  <div class="wadahel">
+    <canvas id="myChart" width="400" height="200"></canvas>
+  </div>
+
+  <script>
+    // Sample data for the bar chart
+    var data = {
+      labels: ['January', 'February', 'March', 'April', 'May'],
+      datasets: [{
+        label: 'Monthly Sales',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
+        data: [50, 60, 70, 65, 80]
+      }]
+    };
+
+    // Configuration options for the chart
+    var options = {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    };
+
+    // Get the canvas element
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+    // Create a bar chart
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: data,
+      options: options
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js Line Chart Example</title>
+  <!-- Include Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .wadahel{
+      width: 800px;
+      max-width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Create a canvas element where the chart will be rendered -->
+  <div class="wadahel">
+    <canvas id="myLineChart" width="400" height="200"></canvas>
+  </div>
+
+  <script>
+    // Sample data for the line chart
+    var data = {
+      labels: ['January', 'February', 'March', 'April', 'May'],
+      datasets: [{
+        label: 'Monthly Sales',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 2,
+        fill: false,
+        data: [50, 60, 70, 65, 80]
+      }]
+    };
+
+    // Configuration options for the chart
+    var options = {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    };
+
+    // Get the canvas element
+    var ctx = document.getElementById('myLineChart').getContext('2d');
+
+    // Create a line chart
+    var myLineChart = new Chart(ctx, {
+      type: 'line',
+      data: data,
+      options: options
+    });
+  </script>
+
+</body>
+
+</html>
